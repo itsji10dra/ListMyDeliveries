@@ -1,0 +1,105 @@
+//
+//  ImageCache.swift
+//  ListMyDelivery
+//
+//  Created by Jitendra on 16/09/18.
+//  Copyright © 2018 Jitendra Gandhi. All rights reserved.
+//
+
+import UIKit
+import Foundation
+
+class ImageCache {
+    
+    // MARK: - Data
+    
+    public static let shared = ImageCache(name: "shared")
+    
+    private let memoryCache = NSCache<NSString, UIImage>()
+    
+    var maxMemoryCost: UInt = 0 {
+        didSet {
+            self.memoryCache.totalCostLimit = Int(maxMemoryCost)
+        }
+    }
+    
+    private let imageCost: ((UIImage) -> Int) = { image in
+        return Int(image.size.height * image.size.width * image.scale)
+    }
+    
+    private let fileManager = FileManager.default
+    
+    // MARK: - Initializer
+    
+    public init(name: String) {
+        
+        let bundleId =  Bundle.main.bundleIdentifier ?? ""
+        let cacheName = bundleId + ".\(name)"
+        memoryCache.name = cacheName
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(clearMemoryCache),
+                                               name: .UIApplicationDidReceiveMemoryWarning,
+                                               object: nil)
+    }
+    
+    // MARK: - DeInitializer
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    // MARK: - Public Methods
+    
+    public func store(_ image: UIImage,
+                      forKey key: String,
+                      toDisk: Bool = true,
+                      completionHandler: (() -> Void)? = nil) {
+        
+        memoryCache.setObject(image, forKey: key as NSString, cost: imageCost(image))
+        
+        if toDisk {
+            if let path = fileManager.libraryPath()?.appendingPathComponent(key).path,
+                let data = UIImageJPEGRepresentation(image, 1.0) ?? UIImagePNGRepresentation(image),
+                fileManager.fileExists(atPath: path) == false {
+                if fileManager.createFile(atPath: path, contents: data, attributes: nil) {
+//                    print("Cached To Disk: ", key)
+                }
+            }
+        }
+        
+        if let handler = completionHandler {
+            DispatchQueue.main.async {
+                handler()
+            }
+        }
+    }
+    
+    public func removeImage(forKey key: String,
+                            completionHandler: (() -> Void)? = nil) {
+        
+        memoryCache.removeObject(forKey: key as NSString)
+        
+        if let handler = completionHandler {
+            DispatchQueue.main.async {
+                handler()
+            }
+        }
+    }
+    
+    public func retrieve(forKey key: String, consider diskCache: Bool = false) -> UIImage? {
+        
+        func imageFromDisk() -> UIImage? {
+            guard diskCache,
+                let path = fileManager.libraryPath()?.appendingPathComponent(key).path else { return nil }
+            return UIImage(contentsOfFile: path)
+        }
+        
+        return memoryCache.object(forKey: key as NSString) ?? imageFromDisk()
+    }
+    
+    @objc
+    public func clearMemoryCache() {
+        memoryCache.removeAllObjects()
+    }
+}
