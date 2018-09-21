@@ -150,8 +150,9 @@ class ListDeliveryVC: UIViewController {
     
     @objc
     private func refreshList() {
-        pagingModel.clearDataSource()
         refreshControl.endRefreshing()
+        guard ReachabilityManager.shared.isReachable else { return }
+        pagingModel.clearDataSource()
         loadDeliveries()
     }
     
