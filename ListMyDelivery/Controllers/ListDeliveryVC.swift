@@ -16,12 +16,10 @@ class ListDeliveryVC: UIViewController {
     
     private var loadingView: LoadingView!
     
-    private var refreshControl = UIRefreshControl()
+    private var refreshControl: UIRefreshControl!
     
     internal let cellIdentifier = "DeliveryCell"
-    
-    internal let cellHeight: CGFloat = 80
-    
+        
     private let loadingViewHeight: CGFloat = 50
     
     // MARK: - Data
@@ -72,6 +70,9 @@ class ListDeliveryVC: UIViewController {
         deliveryTableView.dataSource = self
         deliveryTableView.delegate = self
         deliveryTableView.separatorInset.left = 0
+        deliveryTableView.rowHeight = UITableView.automaticDimension
+        deliveryTableView.estimatedRowHeight = UITableView.automaticDimension
+        
         view.addSubview(deliveryTableView)
         deliveryTableView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -85,6 +86,7 @@ class ListDeliveryVC: UIViewController {
     }
     
     private func loadRefreshControlView() {
+        refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshList), for: .valueChanged)
         deliveryTableView.addSubview(refreshControl)
     }

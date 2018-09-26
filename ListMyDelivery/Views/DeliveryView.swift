@@ -14,6 +14,8 @@ class DeliveryView: UIView {
     
     private let padding: CGFloat = 8
     
+    private let minimumThumbWidth: CGFloat = 80
+    
     // MARK: - UI
 
     var thumbImageView: UIImageView!
@@ -49,9 +51,17 @@ class DeliveryView: UIView {
         addSubview(thumbImageView)
         thumbImageView.translatesAutoresizingMaskIntoConstraints = false
         thumbImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        thumbImageView.widthAnchor.constraint(equalTo: thumbImageView.heightAnchor, multiplier: 1).isActive = true
-        thumbImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        thumbImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        thumbImageView.widthAnchor.constraint(equalToConstant: minimumThumbWidth).isActive = true
+        thumbImageView.heightAnchor.constraint(equalTo: thumbImageView.widthAnchor).isActive = true
+        thumbImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
+        let topConstraint = thumbImageView.topAnchor.constraint(equalTo: topAnchor)
+        topConstraint.priority = .defaultLow
+        topConstraint.isActive = true
+
+        let bottomConstraint = thumbImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        bottomConstraint.priority = .defaultLow
+        bottomConstraint.isActive = true
     }
     
     private func loadDescriptionLabel() {

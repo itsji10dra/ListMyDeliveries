@@ -46,10 +46,6 @@ extension ListDeliveryVC: UITableViewDataSource {
 }
 
 extension ListDeliveryVC: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeight
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         pushDetailsSceneForModel(at: indexPath.row)
