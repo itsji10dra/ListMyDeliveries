@@ -1,0 +1,10 @@
+{
+    "id": 3,
+    "description": "Deliver documents to Simon",
+    "imageUrl": "https://example.com/image.jpeg",
+    "location": {
+        "lat": 22.319181,
+        "lng": 114.170008,
+        "address": "Mong Kok"
+    }
+}

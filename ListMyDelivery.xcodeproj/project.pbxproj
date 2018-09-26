@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1055C799215B6955001C668B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C798215B6955001C668B /* UIView+Extension.swift */; };
+		1055C79D215BB4EE001C668B /* DeliveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C79C215BB4EE001C668B /* DeliveryTests.swift */; };
+		1055C79F215BB5E9001C668B /* DeliveryCase1.json in Resources */ = {isa = PBXBuildFile; fileRef = 1055C79E215BB5E9001C668B /* DeliveryCase1.json */; };
+		1055C7A1215BB901001C668B /* DeliveryCase2.json in Resources */ = {isa = PBXBuildFile; fileRef = 1055C7A0215BB901001C668B /* DeliveryCase2.json */; };
 		106EADC32150B59D00B99B7B /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADC22150B59D00B99B7B /* FileManager+Extension.swift */; };
 		10B9D344214C3F70007DFD54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D343214C3F70007DFD54 /* AppDelegate.swift */; };
 		10B9D346214C3F70007DFD54 /* ListDeliveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D345214C3F70007DFD54 /* ListDeliveryVC.swift */; };
@@ -55,6 +58,9 @@
 		09B326D8945968D4F9866E9D /* Pods_ListMyDeliveryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ListMyDeliveryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D83636BB5D259E13220FAAE /* Pods-ListMyDeliveryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListMyDeliveryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ListMyDeliveryTests/Pods-ListMyDeliveryTests.release.xcconfig"; sourceTree = "<group>"; };
 		1055C798215B6955001C668B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		1055C79C215BB4EE001C668B /* DeliveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTests.swift; sourceTree = "<group>"; };
+		1055C79E215BB5E9001C668B /* DeliveryCase1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DeliveryCase1.json; sourceTree = "<group>"; };
+		1055C7A0215BB901001C668B /* DeliveryCase2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DeliveryCase2.json; sourceTree = "<group>"; };
 		106EADC22150B59D00B99B7B /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		10B9D340214C3F70007DFD54 /* ListMyDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListMyDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B9D343214C3F70007DFD54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +120,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1055C7A2215BBABC001C668B /* Delivery */ = {
+			isa = PBXGroup;
+			children = (
+				1055C79E215BB5E9001C668B /* DeliveryCase1.json */,
+				1055C7A0215BB901001C668B /* DeliveryCase2.json */,
+				1055C79C215BB4EE001C668B /* DeliveryTests.swift */,
+			);
+			path = Delivery;
+			sourceTree = "<group>";
+		};
 		10B9D337214C3F70007DFD54 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				10B9D358214C3F72007DFD54 /* ListMyDeliveryTests.swift */,
+				1055C7A2215BBABC001C668B /* Delivery */,
 				10B9D35A214C3F72007DFD54 /* Info.plist */,
 			);
 			path = ListMyDeliveryTests;
@@ -373,6 +390,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1055C7A1215BB901001C668B /* DeliveryCase2.json in Resources */,
+				1055C79F215BB5E9001C668B /* DeliveryCase1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10B9D359214C3F72007DFD54 /* ListMyDeliveryTests.swift in Sources */,
+				1055C79D215BB4EE001C668B /* DeliveryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
