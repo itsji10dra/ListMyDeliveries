@@ -110,7 +110,7 @@ class PagingViewModel<T, E> where T:Decodable, T: Storable {
                     
                     self?.loadedAllData = data.isEmpty
                     
-                    self?.persistData()
+                    self?.persistData(response)
                     
                 case .failure(let error):
                     print(" • Failed. Reason: ", error.localizedDescription)
@@ -144,10 +144,9 @@ class PagingViewModel<T, E> where T:Decodable, T: Storable {
         self.loadedAllData = (offset != 0) && data.isEmpty
     }
     
-    @objc
-    private func persistData() {
+    private func persistData(_ data: [T]) {
         
-        let realmObjects = receivedDataSource.map { $0.convertToStorage() }
+        let realmObjects = data.map { $0.convertToStorage() }
         
         RealmManager.shared.save(data: realmObjects)
     }
