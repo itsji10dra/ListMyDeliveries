@@ -49,5 +49,12 @@ extension DeliveryTests {
         XCTAssertEqual(delivery.location.latitude, storedDelivery.location.latitude)
         XCTAssertEqual(delivery.location.longitude, storedDelivery.location.longitude)
         XCTAssertEqual(delivery.location.address, storedDelivery.location.address)
+        
+        if let librarayPath = FileManager.default.libraryPath() {
+            let url = librarayPath.appendingPathComponent(storedDelivery.imageName)
+            XCTAssertEqual(delivery.imageUrl, url)
+        } else {
+            XCTFail("Failed to get library path.")
+        }
     }
 }

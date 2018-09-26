@@ -16,12 +16,12 @@
 		1055C7A9215BBBB7001C668B /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C7A8215BBBB7001C668B /* LocationTests.swift */; };
 		1055C7AB215BBE47001C668B /* StoredDeliveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C7AA215BBE47001C668B /* StoredDeliveryTests.swift */; };
 		1055C7AD215BC05E001C668B /* StoredLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C7AC215BC05E001C668B /* StoredLocationTests.swift */; };
+		1055C7B0215BC4E0001C668B /* URLManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C7AF215BC4E0001C668B /* URLManagerTests.swift */; };
 		106EADC32150B59D00B99B7B /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADC22150B59D00B99B7B /* FileManager+Extension.swift */; };
 		10B9D344214C3F70007DFD54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D343214C3F70007DFD54 /* AppDelegate.swift */; };
 		10B9D346214C3F70007DFD54 /* ListDeliveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D345214C3F70007DFD54 /* ListDeliveryVC.swift */; };
 		10B9D34B214C3F72007DFD54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B9D34A214C3F72007DFD54 /* Assets.xcassets */; };
 		10B9D34E214C3F72007DFD54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B9D34C214C3F72007DFD54 /* LaunchScreen.storyboard */; };
-		10B9D359214C3F72007DFD54 /* ListMyDeliveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D358214C3F72007DFD54 /* ListMyDeliveryTests.swift */; };
 		10B9D364214C41AB007DFD54 /* DetailsDeliveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D363214C41AB007DFD54 /* DetailsDeliveryVC.swift */; };
 		10B9D369214C4818007DFD54 /* ListDeliveryVC+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D368214C4818007DFD54 /* ListDeliveryVC+Delegates.swift */; };
 		10B9D36B214C4933007DFD54 /* DeliveryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D36A214C4933007DFD54 /* DeliveryCell.swift */; };
@@ -71,6 +71,7 @@
 		1055C7A8215BBBB7001C668B /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
 		1055C7AA215BBE47001C668B /* StoredDeliveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredDeliveryTests.swift; sourceTree = "<group>"; };
 		1055C7AC215BC05E001C668B /* StoredLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredLocationTests.swift; sourceTree = "<group>"; };
+		1055C7AF215BC4E0001C668B /* URLManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManagerTests.swift; sourceTree = "<group>"; };
 		106EADC22150B59D00B99B7B /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		10B9D340214C3F70007DFD54 /* ListMyDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListMyDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B9D343214C3F70007DFD54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		10B9D34D214C3F72007DFD54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10B9D34F214C3F72007DFD54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10B9D354214C3F72007DFD54 /* ListMyDeliveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListMyDeliveryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		10B9D358214C3F72007DFD54 /* ListMyDeliveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMyDeliveryTests.swift; sourceTree = "<group>"; };
 		10B9D35A214C3F72007DFD54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10B9D363214C41AB007DFD54 /* DetailsDeliveryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDeliveryVC.swift; sourceTree = "<group>"; };
 		10B9D368214C4818007DFD54 /* ListDeliveryVC+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListDeliveryVC+Delegates.swift"; sourceTree = "<group>"; };
@@ -152,6 +152,14 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		1055C7AE215BC4C3001C668B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1055C7AF215BC4E0001C668B /* URLManagerTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		10B9D337214C3F70007DFD54 = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +202,7 @@
 		10B9D357214C3F72007DFD54 /* ListMyDeliveryTests */ = {
 			isa = PBXGroup;
 			children = (
-				10B9D358214C3F72007DFD54 /* ListMyDeliveryTests.swift */,
+				1055C7AE215BC4C3001C668B /* Network */,
 				1055C7A2215BBABC001C668B /* Delivery */,
 				1055C7A3215BBB3C001C668B /* Location */,
 				10B9D35A214C3F72007DFD54 /* Info.plist */,
@@ -524,8 +532,8 @@
 			files = (
 				1055C7AB215BBE47001C668B /* StoredDeliveryTests.swift in Sources */,
 				1055C7AD215BC05E001C668B /* StoredLocationTests.swift in Sources */,
-				10B9D359214C3F72007DFD54 /* ListMyDeliveryTests.swift in Sources */,
 				1055C7A9215BBBB7001C668B /* LocationTests.swift in Sources */,
+				1055C7B0215BC4E0001C668B /* URLManagerTests.swift in Sources */,
 				1055C79D215BB4EE001C668B /* DeliveryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

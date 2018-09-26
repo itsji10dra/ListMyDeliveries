@@ -17,8 +17,7 @@ class DeliveryTests: XCTestCase {
         
         let testBundle = Bundle(for: type(of: self))
         guard let fileURL = testBundle.url(forResource: "DeliveryCase1", withExtension: "json") else {
-            XCTFail("Unable to load JSON from bundle")
-            return
+            return XCTFail("Unable to load JSON from bundle")
         }
         
         var stringJSON: String? = nil
@@ -46,8 +45,7 @@ class DeliveryTests: XCTestCase {
         
         let testBundle = Bundle(for: type(of: self))
         guard let fileURL = testBundle.url(forResource: "DeliveryCase2", withExtension: "json") else {
-            XCTFail("Unable to load JSON from bundle")
-            return
+            return XCTFail("Unable to load JSON from bundle")
         }
         
         var stringJSON: String? = nil
