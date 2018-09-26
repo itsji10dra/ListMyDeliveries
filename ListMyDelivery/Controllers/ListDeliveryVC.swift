@@ -89,7 +89,6 @@ class ListDeliveryVC: UIViewController {
         
         let superViewConstraint = loadingView.alignWithSuperView(activate: false)
         let tableViewConstraint = loadingView.alignWith(view: deliveryTableView, activate: false)
-        
         [superViewConstraint[.bottom], superViewConstraint[.trailing],
          superViewConstraint[.leading], tableViewConstraint[.bottom]].forEach { $0?.isActive = true }
         loadingView.hide()
