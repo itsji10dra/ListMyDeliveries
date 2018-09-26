@@ -44,10 +44,6 @@ class DeliveryCell: UITableViewCell {
     private func loadDeliveryView() {
         deliveryView = DeliveryView()
         contentView.addSubview(deliveryView)
-        deliveryView.translatesAutoresizingMaskIntoConstraints = false
-        deliveryView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        deliveryView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        deliveryView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        deliveryView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        deliveryView.contraintsAlignWithSuperView()
     }
 }

@@ -49,20 +49,12 @@ class LoadingView: UIView {
         stackView.axis = .horizontal
         stackView.spacing = 5
         addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        stackView.contraintsCenterAlignWithSuperView()
     }
     
     private func loadConstraint() {
         
-        heightConstraint = NSLayoutConstraint(item: self,
-                                              attribute: .height,
-                                              relatedBy: .equal,
-                                              toItem: nil,
-                                              attribute: .notAnAttribute,
-                                              multiplier: 1,
-                                              constant: height)
+        heightConstraint = contraints(0, height: height)[.height]
     }
     
     // MARK: - Public Methods
