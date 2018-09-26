@@ -70,10 +70,14 @@ class DeliveryView: UIView {
         descriptionLabel = UILabel()
         descriptionLabel.numberOfLines = 0
         addSubview(descriptionLabel)
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.leadingAnchor.constraint(equalTo: thumbImageView.trailingAnchor, constant: padding).isActive = true
-        descriptionLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -padding).isActive = true
-        descriptionLabel.topAnchor.constraint(equalTo: topAnchor, constant: padding).isActive = true
-        descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -padding).isActive = true
+
+        let leading = descriptionLabel.leadingAnchor.constraint(equalTo: thumbImageView.trailingAnchor, constant: padding)
+        
+        let inset = UIEdgeInsets(top: padding, left: padding, bottom: -padding, right: -padding)
+        let trailing = descriptionLabel.alignLessThanOrEqualToWithSuperView(inset: inset, activate: false)[.trailing]
+        let bottom = descriptionLabel.alignLessThanOrEqualToWithSuperView(inset: inset, activate: false)[.bottom]
+        let top = descriptionLabel.alignWithSuperView(inset: inset, activate: false)[.top]
+        
+        [leading, trailing, top, bottom].forEach { $0?.isActive = true }
     }
 }
