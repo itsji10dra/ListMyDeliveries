@@ -54,7 +54,7 @@ class LoadingView: UIView {
     
     private func loadConstraint() {
         
-        heightConstraint = alignWidth(0, height: height)[.height]
+        heightConstraint = align(width: 0, height: height)[.height]
     }
     
     // MARK: - Public Methods

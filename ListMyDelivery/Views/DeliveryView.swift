@@ -18,9 +18,9 @@ class DeliveryView: UIView {
     
     // MARK: - UI
 
-    var thumbImageView: UIImageView!
+    internal var thumbImageView: UIImageView!
     
-    var descriptionLabel: UILabel!
+    internal var descriptionLabel: UILabel!
 
     // MARK: - Initializer
 

@@ -41,11 +41,8 @@ class ActivityIndicator {
             
             defer {
                 keyWindow.addSubview(view)
-                let constraint = view.alignWithSuperView()
-                if constraint.isEmpty {
+                if view.alignWithSuperView().isEmpty {
                     view.frame = UIScreen.main.bounds
-                } else {
-                    NSLayoutConstraint.activate(Array(constraint.values))
                 }
             }
             
@@ -59,7 +56,7 @@ class ActivityIndicator {
             blurView.layer.masksToBounds = true
             blurView.layer.cornerRadius = 10
             view.addSubview(blurView)
-            blurView.alignWidth(150, height: 150)
+            blurView.align(width: 150, height: 150)
             blurView.alignCenterWithSuperView()
 
             let holderStackView = UIStackView()

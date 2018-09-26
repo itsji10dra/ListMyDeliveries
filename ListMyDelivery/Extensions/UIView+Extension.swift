@@ -83,7 +83,7 @@ extension UIView {
     }
     
     @discardableResult
-    public func alignWidth(_ width: CGFloat, height: CGFloat, activate: Bool = true) -> ConstraintInfo {
+    public func align(width: CGFloat, height: CGFloat, activate: Bool = true) -> ConstraintInfo {
         let constraint: ConstraintInfo = [.width: widthAnchor.constraint(equalToConstant: width),
                                           .height: heightAnchor.constraint(equalToConstant: height)]
         defer { if activate { NSLayoutConstraint.activate(Array(constraint.values)) } }
