@@ -67,6 +67,5 @@ class URLManagerTests: XCTestCase {
         let offsetValue = urlComponent.queryItems?.first(where: {$0.name == "offset"})?.value
         XCTAssertNotNil(offsetValue)
         XCTAssertEqual(offsetValue, "3")
-
     }
 }

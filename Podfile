@@ -1,14 +1,17 @@
 use_frameworks!
 platform :ios, '10.0'
+inhibit_all_warnings!
 
-target 'ListMyDelivery' do
+abstract_target 'DeliveryApp' do
 
-  pod 'ReachabilitySwift'
   pod 'RealmSwift'
 
+  target 'ListMyDelivery' do
+      pod 'ReachabilitySwift'
+  end
+  
   target 'ListMyDeliveryTests' do
-    inherit! :search_paths
 
   end
-
+  
 end
