@@ -9,7 +9,7 @@
 import XCTest
 @testable import ListMyDelivery
 
-extension LocationTests {
+class StoredLocationTests: XCTestCase {
     
     func testConvertToStorage() {
         

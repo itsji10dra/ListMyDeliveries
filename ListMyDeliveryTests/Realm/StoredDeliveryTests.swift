@@ -9,7 +9,7 @@
 import XCTest
 @testable import ListMyDelivery
 
-extension DeliveryTests {
+class StoredDeliveryTests: XCTestCase {
     
     func testConvertToStorage() {
 
