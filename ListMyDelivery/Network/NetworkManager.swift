@@ -21,8 +21,8 @@ class NetworkManager {
     
     // MARK: - Initializer
     
-    init() {
-        session = URLSession(configuration: .ephemeral)
+    init(session: URLSession = URLSession(configuration: .ephemeral)) {
+        self.session = session
     }
     
     deinit {

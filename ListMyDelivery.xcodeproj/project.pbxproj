@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1026A7D5215BF59B00575C84 /* DetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026A7D4215BF59B00575C84 /* DetailsViewModelTests.swift */; };
+		1026A7D7215BF74A00575C84 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026A7D6215BF74A00575C84 /* NetworkManagerTests.swift */; };
+		1026A7DA215BFFDF00575C84 /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026A7D9215BFFDF00575C84 /* URLSessionDataTaskMock.swift */; };
+		1026A7DC215C000B00575C84 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026A7DB215C000B00575C84 /* URLSessionMock.swift */; };
+		1026A7DE215C077900575C84 /* Success.json in Resources */ = {isa = PBXBuildFile; fileRef = 1026A7DD215C077900575C84 /* Success.json */; };
 		1055C799215B6955001C668B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C798215B6955001C668B /* UIView+Extension.swift */; };
 		1055C79D215BB4EE001C668B /* DeliveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C79C215BB4EE001C668B /* DeliveryTests.swift */; };
 		1055C79F215BB5E9001C668B /* DeliveryCase1.json in Resources */ = {isa = PBXBuildFile; fileRef = 1055C79E215BB5E9001C668B /* DeliveryCase1.json */; };
@@ -63,6 +67,10 @@
 /* Begin PBXFileReference section */
 		0DE759BCBB86965F1AEB7BC9 /* Pods-DeliveryApp-ListMyDelivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp-ListMyDelivery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryApp-ListMyDelivery/Pods-DeliveryApp-ListMyDelivery.debug.xcconfig"; sourceTree = "<group>"; };
 		1026A7D4215BF59B00575C84 /* DetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTests.swift; sourceTree = "<group>"; };
+		1026A7D6215BF74A00575C84 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		1026A7D9215BFFDF00575C84 /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
+		1026A7DB215C000B00575C84 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		1026A7DD215C077900575C84 /* Success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Success.json; sourceTree = "<group>"; };
 		1055C798215B6955001C668B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		1055C79C215BB4EE001C668B /* DeliveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTests.swift; sourceTree = "<group>"; };
 		1055C79E215BB5E9001C668B /* DeliveryCase1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DeliveryCase1.json; sourceTree = "<group>"; };
@@ -139,6 +147,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		1026A7D8215BFFCB00575C84 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				1026A7DD215C077900575C84 /* Success.json */,
+				1026A7D9215BFFDF00575C84 /* URLSessionDataTaskMock.swift */,
+				1026A7DB215C000B00575C84 /* URLSessionMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		1055C7A2215BBABC001C668B /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,7 +180,9 @@
 		1055C7AE215BC4C3001C668B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				1026A7D8215BFFCB00575C84 /* Mock */,
 				1055C7AF215BC4E0001C668B /* URLManagerTests.swift */,
+				1026A7D6215BF74A00575C84 /* NetworkManagerTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -444,6 +464,7 @@
 				1055C7A7215BBB8E001C668B /* LocationCase2.json in Resources */,
 				1055C79F215BB5E9001C668B /* DeliveryCase1.json in Resources */,
 				1055C7A5215BBB77001C668B /* LocationCase1.json in Resources */,
+				1026A7DE215C077900575C84 /* Success.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,13 +590,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1026A7DC215C000B00575C84 /* URLSessionMock.swift in Sources */,
 				1055C7AB215BBE47001C668B /* StoredDeliveryTests.swift in Sources */,
 				1055C7AD215BC05E001C668B /* StoredLocationTests.swift in Sources */,
 				1055C7A9215BBBB7001C668B /* LocationTests.swift in Sources */,
 				1055C7B0215BC4E0001C668B /* URLManagerTests.swift in Sources */,
+				1026A7D7215BF74A00575C84 /* NetworkManagerTests.swift in Sources */,
 				1026A7D5215BF59B00575C84 /* DetailsViewModelTests.swift in Sources */,
 				1055C79D215BB4EE001C668B /* DeliveryTests.swift in Sources */,
 				1055C7B3215BCD7B001C668B /* RealmTests.swift in Sources */,
+				1026A7DA215BFFDF00575C84 /* URLSessionDataTaskMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
