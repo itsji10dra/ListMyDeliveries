@@ -11,6 +11,9 @@
 		1055C79D215BB4EE001C668B /* DeliveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C79C215BB4EE001C668B /* DeliveryTests.swift */; };
 		1055C79F215BB5E9001C668B /* DeliveryCase1.json in Resources */ = {isa = PBXBuildFile; fileRef = 1055C79E215BB5E9001C668B /* DeliveryCase1.json */; };
 		1055C7A1215BB901001C668B /* DeliveryCase2.json in Resources */ = {isa = PBXBuildFile; fileRef = 1055C7A0215BB901001C668B /* DeliveryCase2.json */; };
+		1055C7A5215BBB77001C668B /* LocationCase1.json in Resources */ = {isa = PBXBuildFile; fileRef = 1055C7A4215BBB77001C668B /* LocationCase1.json */; };
+		1055C7A7215BBB8E001C668B /* LocationCase2.json in Resources */ = {isa = PBXBuildFile; fileRef = 1055C7A6215BBB8E001C668B /* LocationCase2.json */; };
+		1055C7A9215BBBB7001C668B /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C7A8215BBBB7001C668B /* LocationTests.swift */; };
 		106EADC32150B59D00B99B7B /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADC22150B59D00B99B7B /* FileManager+Extension.swift */; };
 		10B9D344214C3F70007DFD54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D343214C3F70007DFD54 /* AppDelegate.swift */; };
 		10B9D346214C3F70007DFD54 /* ListDeliveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D345214C3F70007DFD54 /* ListDeliveryVC.swift */; };
@@ -61,6 +64,9 @@
 		1055C79C215BB4EE001C668B /* DeliveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTests.swift; sourceTree = "<group>"; };
 		1055C79E215BB5E9001C668B /* DeliveryCase1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DeliveryCase1.json; sourceTree = "<group>"; };
 		1055C7A0215BB901001C668B /* DeliveryCase2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DeliveryCase2.json; sourceTree = "<group>"; };
+		1055C7A4215BBB77001C668B /* LocationCase1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationCase1.json; sourceTree = "<group>"; };
+		1055C7A6215BBB8E001C668B /* LocationCase2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationCase2.json; sourceTree = "<group>"; };
+		1055C7A8215BBBB7001C668B /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
 		106EADC22150B59D00B99B7B /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		10B9D340214C3F70007DFD54 /* ListMyDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListMyDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B9D343214C3F70007DFD54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +136,16 @@
 			path = Delivery;
 			sourceTree = "<group>";
 		};
+		1055C7A3215BBB3C001C668B /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				1055C7A4215BBB77001C668B /* LocationCase1.json */,
+				1055C7A6215BBB8E001C668B /* LocationCase2.json */,
+				1055C7A8215BBBB7001C668B /* LocationTests.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		10B9D337214C3F70007DFD54 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +190,7 @@
 			children = (
 				10B9D358214C3F72007DFD54 /* ListMyDeliveryTests.swift */,
 				1055C7A2215BBABC001C668B /* Delivery */,
+				1055C7A3215BBB3C001C668B /* Location */,
 				10B9D35A214C3F72007DFD54 /* Info.plist */,
 			);
 			path = ListMyDeliveryTests;
@@ -391,7 +408,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1055C7A1215BB901001C668B /* DeliveryCase2.json in Resources */,
+				1055C7A7215BBB8E001C668B /* LocationCase2.json in Resources */,
 				1055C79F215BB5E9001C668B /* DeliveryCase1.json in Resources */,
+				1055C7A5215BBB77001C668B /* LocationCase1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10B9D359214C3F72007DFD54 /* ListMyDeliveryTests.swift in Sources */,
+				1055C7A9215BBBB7001C668B /* LocationTests.swift in Sources */,
 				1055C79D215BB4EE001C668B /* DeliveryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
