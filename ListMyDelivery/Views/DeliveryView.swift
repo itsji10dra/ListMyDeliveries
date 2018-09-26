@@ -72,7 +72,6 @@ class DeliveryView: UIView {
         addSubview(descriptionLabel)
 
         let leading = descriptionLabel.leadingAnchor.constraint(equalTo: thumbImageView.trailingAnchor, constant: padding)
-        
         let inset = UIEdgeInsets(top: padding, left: padding, bottom: -padding, right: -padding)
         let trailing = descriptionLabel.alignLessThanOrEqualToWithSuperView(inset: inset, activate: false)[.trailing]
         let bottom = descriptionLabel.alignLessThanOrEqualToWithSuperView(inset: inset, activate: false)[.bottom]

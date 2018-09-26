@@ -160,6 +160,15 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		1026A7DF215C20EB00575C84 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1055C7A2215BBABC001C668B /* Delivery */,
+				1055C7A3215BBB3C001C668B /* Location */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1055C7A2215BBABC001C668B /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,8 +253,7 @@
 			children = (
 				1055C7B1215BCD0F001C668B /* Realm */,
 				1055C7AE215BC4C3001C668B /* Network */,
-				1055C7A2215BBABC001C668B /* Delivery */,
-				1055C7A3215BBB3C001C668B /* Location */,
+				1026A7DF215C20EB00575C84 /* Models */,
 				1026A7D3215BF57A00575C84 /* ViewModel */,
 				10B9D35A214C3F72007DFD54 /* Info.plist */,
 			);
