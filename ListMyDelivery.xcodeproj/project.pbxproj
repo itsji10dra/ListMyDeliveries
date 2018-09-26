@@ -17,7 +17,7 @@
 		1055C7AB215BBE47001C668B /* StoredDeliveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C7AA215BBE47001C668B /* StoredDeliveryTests.swift */; };
 		1055C7AD215BC05E001C668B /* StoredLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C7AC215BC05E001C668B /* StoredLocationTests.swift */; };
 		1055C7B0215BC4E0001C668B /* URLManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C7AF215BC4E0001C668B /* URLManagerTests.swift */; };
-		1055C7B3215BCD7B001C668B /* RealmManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C7B2215BCD7B001C668B /* RealmManagerTests.swift */; };
+		1055C7B3215BCD7B001C668B /* RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C7B2215BCD7B001C668B /* RealmTests.swift */; };
 		106EADC32150B59D00B99B7B /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADC22150B59D00B99B7B /* FileManager+Extension.swift */; };
 		10B9D344214C3F70007DFD54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D343214C3F70007DFD54 /* AppDelegate.swift */; };
 		10B9D346214C3F70007DFD54 /* ListDeliveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D345214C3F70007DFD54 /* ListDeliveryVC.swift */; };
@@ -46,8 +46,6 @@
 		10B9D3A1214FAC03007DFD54 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D3A0214FAC03007DFD54 /* RealmManager.swift */; };
 		10B9D3A3214FAF20007DFD54 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D3A2214FAF20007DFD54 /* ReachabilityManager.swift */; };
 		10B9D3A5214FE4E1007DFD54 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D3A4214FE4E1007DFD54 /* Protocols.swift */; };
-		958065A2C20A9BB4C08642ED /* Pods_ListMyDeliveryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B326D8945968D4F9866E9D /* Pods_ListMyDeliveryTests.framework */; };
-		D78E5A268AD73AB89BCEB4F2 /* Pods_DeliveryApp_ListMyDeliveryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18281B421370D1E441DA26EA /* Pods_DeliveryApp_ListMyDeliveryTests.framework */; };
 		F0CF3F9ACF88544EF9C55D23 /* Pods_DeliveryApp_ListMyDelivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB2D1E27208C531AA0F465F /* Pods_DeliveryApp_ListMyDelivery.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09B326D8945968D4F9866E9D /* Pods_ListMyDeliveryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ListMyDeliveryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE759BCBB86965F1AEB7BC9 /* Pods-DeliveryApp-ListMyDelivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp-ListMyDelivery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryApp-ListMyDelivery/Pods-DeliveryApp-ListMyDelivery.debug.xcconfig"; sourceTree = "<group>"; };
 		1055C798215B6955001C668B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		1055C79C215BB4EE001C668B /* DeliveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTests.swift; sourceTree = "<group>"; };
@@ -74,7 +71,7 @@
 		1055C7AA215BBE47001C668B /* StoredDeliveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredDeliveryTests.swift; sourceTree = "<group>"; };
 		1055C7AC215BC05E001C668B /* StoredLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredLocationTests.swift; sourceTree = "<group>"; };
 		1055C7AF215BC4E0001C668B /* URLManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManagerTests.swift; sourceTree = "<group>"; };
-		1055C7B2215BCD7B001C668B /* RealmManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerTests.swift; sourceTree = "<group>"; };
+		1055C7B2215BCD7B001C668B /* RealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTests.swift; sourceTree = "<group>"; };
 		106EADC22150B59D00B99B7B /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		10B9D340214C3F70007DFD54 /* ListMyDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListMyDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B9D343214C3F70007DFD54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,10 +105,7 @@
 		10B9D3A2214FAF20007DFD54 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		10B9D3A4214FE4E1007DFD54 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		125A35641F30EA5AD3D92F9D /* Pods-DeliveryApp-ListMyDeliveryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp-ListMyDeliveryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryApp-ListMyDeliveryTests/Pods-DeliveryApp-ListMyDeliveryTests.debug.xcconfig"; sourceTree = "<group>"; };
-		18281B421370D1E441DA26EA /* Pods_DeliveryApp_ListMyDeliveryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryApp_ListMyDeliveryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA33D03417FBE17FB003D44 /* Pods-DeliveryApp-ListMyDeliveryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp-ListMyDeliveryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryApp-ListMyDeliveryTests/Pods-DeliveryApp-ListMyDeliveryTests.release.xcconfig"; sourceTree = "<group>"; };
-		6AD929DAC488EBF74E48BCE9 /* Pods_ListMyDelivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ListMyDelivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BD92B26660FA8BD772EDB4C /* Pods_PAL_MBE_ListMyDelivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PAL_MBE_ListMyDelivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB2D1E27208C531AA0F465F /* Pods_DeliveryApp_ListMyDelivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryApp_ListMyDelivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13C3D14145E7DCE8E55316D /* Pods-DeliveryApp-ListMyDelivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp-ListMyDelivery.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryApp-ListMyDelivery/Pods-DeliveryApp-ListMyDelivery.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,8 +123,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				958065A2C20A9BB4C08642ED /* Pods_ListMyDeliveryTests.framework in Frameworks */,
-				D78E5A268AD73AB89BCEB4F2 /* Pods_DeliveryApp_ListMyDeliveryTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +160,7 @@
 		1055C7B1215BCD0F001C668B /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				1055C7B2215BCD7B001C668B /* RealmManagerTests.swift */,
+				1055C7B2215BCD7B001C668B /* RealmTests.swift */,
 				1055C7AA215BBE47001C668B /* StoredDeliveryTests.swift */,
 				1055C7AC215BC05E001C668B /* StoredLocationTests.swift */,
 			);
@@ -338,11 +330,7 @@
 		E4420214A30176E939EBF6D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6AD929DAC488EBF74E48BCE9 /* Pods_ListMyDelivery.framework */,
-				09B326D8945968D4F9866E9D /* Pods_ListMyDeliveryTests.framework */,
-				9BD92B26660FA8BD772EDB4C /* Pods_PAL_MBE_ListMyDelivery.framework */,
 				BEB2D1E27208C531AA0F465F /* Pods_DeliveryApp_ListMyDelivery.framework */,
-				18281B421370D1E441DA26EA /* Pods_DeliveryApp_ListMyDeliveryTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -575,7 +563,7 @@
 				1055C7A9215BBBB7001C668B /* LocationTests.swift in Sources */,
 				1055C7B0215BC4E0001C668B /* URLManagerTests.swift in Sources */,
 				1055C79D215BB4EE001C668B /* DeliveryTests.swift in Sources */,
-				1055C7B3215BCD7B001C668B /* RealmManagerTests.swift in Sources */,
+				1055C7B3215BCD7B001C668B /* RealmTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

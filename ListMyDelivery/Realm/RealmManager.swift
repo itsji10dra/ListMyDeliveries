@@ -28,22 +28,18 @@ class RealmManager {
 
         let realm = try! Realm()
 
-        let result = realm.objects(T.self).sorted(byKeyPath: "id")
+        let result = realm.objects(T.self)
 
         guard result.isEmpty == false else { return [] }
 
         let idealLimit = offset + Configuration.pageLimit
+        
         let limit = idealLimit < result.count ? idealLimit : result.count
 
         guard offset < limit else { return [] }
         
-        var data: [T] = []
-
-        for index in offset..<limit {
-            let delivery = result[index]
-            data.append(delivery)
-        }
-
+        let data: [T] = (offset..<limit).map { index in return result[index] }
+        
         return data
     }
     
