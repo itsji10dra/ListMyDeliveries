@@ -41,14 +41,11 @@ class ActivityIndicator {
             
             defer {
                 keyWindow.addSubview(view)
-                if let rootView = keyWindow.rootViewController?.view {
-                    view.translatesAutoresizingMaskIntoConstraints = false
-                    view.topAnchor.constraint(equalTo: rootView.topAnchor).isActive = true
-                    view.bottomAnchor.constraint(equalTo: rootView.bottomAnchor).isActive = true
-                    view.leadingAnchor.constraint(equalTo: rootView.leadingAnchor).isActive = true
-                    view.trailingAnchor.constraint(equalTo: rootView.trailingAnchor).isActive = true
-                } else {
+                let constraint = view.contraintsAlignWithSuperView()
+                if constraint.isEmpty {
                     view.frame = UIScreen.main.bounds
+                } else {
+                    NSLayoutConstraint.activate(Array(constraint.values))
                 }
             }
             
@@ -56,20 +53,14 @@ class ActivityIndicator {
             dimView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
             view.addSubview(dimView)
             dimView.translatesAutoresizingMaskIntoConstraints = false
-            dimView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-            dimView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-            dimView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-            dimView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            dimView.contraintsAlignWithSuperView()
             
             let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
             blurView.layer.masksToBounds = true
             blurView.layer.cornerRadius = 10
             view.addSubview(blurView)
-            blurView.translatesAutoresizingMaskIntoConstraints = false
-            blurView.heightAnchor.constraint(equalToConstant: 150).isActive = true
-            blurView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-            blurView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            blurView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+            blurView.contraints(150, height: 150)
+            blurView.contraintsCenterAlignWithSuperView()
 
             let holderStackView = UIStackView()
             holderStackView.axis = .vertical
@@ -77,10 +68,8 @@ class ActivityIndicator {
             holderStackView.alignment = .center
             holderStackView.spacing = 15
             blurView.contentView.addSubview(holderStackView)
-            holderStackView.translatesAutoresizingMaskIntoConstraints = false
-            holderStackView.centerXAnchor.constraint(equalTo: blurView.centerXAnchor).isActive = true
-            holderStackView.centerYAnchor.constraint(equalTo: blurView.centerYAnchor).isActive = true
-            
+            holderStackView.contraintsCenterAlignWithSuperView()
+
             let loaderView = UIActivityIndicatorView(style: .whiteLarge)
             loaderView.startAnimating()
             loaderView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1055C799215B6955001C668B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055C798215B6955001C668B /* UIView+Extension.swift */; };
 		106EADC32150B59D00B99B7B /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADC22150B59D00B99B7B /* FileManager+Extension.swift */; };
 		10B9D344214C3F70007DFD54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D343214C3F70007DFD54 /* AppDelegate.swift */; };
 		10B9D346214C3F70007DFD54 /* ListDeliveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D345214C3F70007DFD54 /* ListDeliveryVC.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		09B326D8945968D4F9866E9D /* Pods_ListMyDeliveryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ListMyDeliveryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D83636BB5D259E13220FAAE /* Pods-ListMyDeliveryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListMyDeliveryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ListMyDeliveryTests/Pods-ListMyDeliveryTests.release.xcconfig"; sourceTree = "<group>"; };
+		1055C798215B6955001C668B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		106EADC22150B59D00B99B7B /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		10B9D340214C3F70007DFD54 /* ListMyDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListMyDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B9D343214C3F70007DFD54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			children = (
 				10B9D386214EC739007DFD54 /* UIImageView+Extension.swift */,
 				106EADC22150B59D00B99B7B /* FileManager+Extension.swift */,
+				1055C798215B6955001C668B /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				10B9D36B214C4933007DFD54 /* DeliveryCell.swift in Sources */,
 				10B9D39A214F7428007DFD54 /* DetailsViewModel.swift in Sources */,
 				10B9D397214EEE1F007DFD54 /* LoadingView.swift in Sources */,
+				1055C799215B6955001C668B /* UIView+Extension.swift in Sources */,
 				10B9D375214C5210007DFD54 /* EndPoint.swift in Sources */,
 				10B9D395214EE622007DFD54 /* PagingViewModel.swift in Sources */,
 				10B9D36E214C506A007DFD54 /* Delivery.swift in Sources */,
