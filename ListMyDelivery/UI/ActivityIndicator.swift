@@ -41,7 +41,7 @@ class ActivityIndicator {
             
             defer {
                 keyWindow.addSubview(view)
-                let constraint = view.contraintsAlignWithSuperView()
+                let constraint = view.alignWithSuperView()
                 if constraint.isEmpty {
                     view.frame = UIScreen.main.bounds
                 } else {
@@ -53,14 +53,14 @@ class ActivityIndicator {
             dimView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
             view.addSubview(dimView)
             dimView.translatesAutoresizingMaskIntoConstraints = false
-            dimView.contraintsAlignWithSuperView()
+            dimView.alignWithSuperView()
             
             let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
             blurView.layer.masksToBounds = true
             blurView.layer.cornerRadius = 10
             view.addSubview(blurView)
-            blurView.contraints(150, height: 150)
-            blurView.contraintsCenterAlignWithSuperView()
+            blurView.alignWidth(150, height: 150)
+            blurView.alignCenterWithSuperView()
 
             let holderStackView = UIStackView()
             holderStackView.axis = .vertical
@@ -68,7 +68,7 @@ class ActivityIndicator {
             holderStackView.alignment = .center
             holderStackView.spacing = 15
             blurView.contentView.addSubview(holderStackView)
-            holderStackView.contraintsCenterAlignWithSuperView()
+            holderStackView.alignCenterWithSuperView()
 
             let loaderView = UIActivityIndicatorView(style: .whiteLarge)
             loaderView.startAnimating()

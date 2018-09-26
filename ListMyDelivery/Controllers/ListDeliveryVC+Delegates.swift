@@ -30,8 +30,8 @@ extension ListDeliveryVC: UITableViewDataSource {
         
         let cell: DeliveryCell
         
-        if let resuableCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? DeliveryCell {
-            cell = resuableCell
+        if let reusableCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? DeliveryCell {
+            cell = reusableCell
         } else {
             cell = DeliveryCell(style: .default, reuseIdentifier: cellIdentifier)
         }

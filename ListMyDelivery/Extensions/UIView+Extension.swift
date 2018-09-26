@@ -17,7 +17,7 @@ public typealias ConstraintInfo = [ConstraintType: NSLayoutConstraint]
 extension UIView {
     
     @discardableResult
-    public func contraintsAlign(with view: UIView, padding inset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
+    public func align(with view: UIView, padding inset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
         translatesAutoresizingMaskIntoConstraints = false
         let constraint: ConstraintInfo = [.top: topAnchor.constraint(equalTo: view.topAnchor, constant: inset.top),
                                           .bottom: bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: inset.bottom),
@@ -28,7 +28,29 @@ extension UIView {
     }
     
     @discardableResult
-    public func contraintsCenterAlign(with view: UIView, activate: Bool = true) -> ConstraintInfo {
+    public func alignLessThanOrEqualTo(_ view: UIView, padding inset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
+        translatesAutoresizingMaskIntoConstraints = false
+        let constraint: ConstraintInfo = [.top: topAnchor.constraint(lessThanOrEqualTo: view.topAnchor, constant: inset.top),
+                                          .bottom: bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: inset.bottom),
+                                          .leading: leadingAnchor.constraint(lessThanOrEqualTo: view.leadingAnchor, constant: inset.left),
+                                          .trailing: trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: inset.right)]
+        defer { if activate { NSLayoutConstraint.activate(Array(constraint.values)) } }
+        return constraint
+    }
+    
+    @discardableResult
+    public func alignGreaterThanOrEqualTo(_ view: UIView, padding inset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
+        translatesAutoresizingMaskIntoConstraints = false
+        let constraint: ConstraintInfo = [.top: topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: inset.top),
+                                          .bottom: bottomAnchor.constraint(greaterThanOrEqualTo: view.bottomAnchor, constant: inset.bottom),
+                                          .leading: leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: inset.left),
+                                          .trailing: trailingAnchor.constraint(greaterThanOrEqualTo: view.trailingAnchor, constant: inset.right)]
+        defer { if activate { NSLayoutConstraint.activate(Array(constraint.values)) } }
+        return constraint
+    }
+    
+    @discardableResult
+    public func alignCenter(with view: UIView, activate: Bool = true) -> ConstraintInfo {
         translatesAutoresizingMaskIntoConstraints = false
         let constraint: ConstraintInfo = [.centerX: centerXAnchor.constraint(equalTo: view.centerXAnchor),
                                           .centerY: centerYAnchor.constraint(equalTo: view.centerYAnchor)]
@@ -37,23 +59,34 @@ extension UIView {
     }
     
     @discardableResult
-    public func contraintsAlignWithSuperView(with paddingInset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
+    public func alignWithSuperView(with paddingInset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
         guard let superview = superview else { return [:] }
-        return contraintsAlign(with: superview, padding: paddingInset, activate: activate)
+        return align(with: superview, padding: paddingInset, activate: activate)
     }
     
     @discardableResult
-    public func contraintsCenterAlignWithSuperView(activate: Bool = true) -> ConstraintInfo {
+    public func alignLessThanOrEqualToWithSuperView(with paddingInset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
         guard let superview = superview else { return [:] }
-        return contraintsCenterAlign(with: superview, activate: activate)
+        return alignLessThanOrEqualTo(superview, padding: paddingInset, activate: activate)
     }
     
     @discardableResult
-    public func contraints(_ width: CGFloat, height: CGFloat, activate: Bool = true) -> ConstraintInfo {
+    public func alignGreaterThanOrEqualToWithSuperView(with paddingInset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
+        guard let superview = superview else { return [:] }
+        return alignGreaterThanOrEqualTo(superview, padding: paddingInset, activate: activate)
+    }
+    
+    @discardableResult
+    public func alignCenterWithSuperView(activate: Bool = true) -> ConstraintInfo {
+        guard let superview = superview else { return [:] }
+        return alignCenter(with: superview, activate: activate)
+    }
+    
+    @discardableResult
+    public func alignWidth(_ width: CGFloat, height: CGFloat, activate: Bool = true) -> ConstraintInfo {
         let constraint: ConstraintInfo = [.width: widthAnchor.constraint(equalToConstant: width),
                                           .height: heightAnchor.constraint(equalToConstant: height)]
         defer { if activate { NSLayoutConstraint.activate(Array(constraint.values)) } }
         return constraint
-
     }
 }

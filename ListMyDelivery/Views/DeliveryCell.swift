@@ -44,6 +44,6 @@ class DeliveryCell: UITableViewCell {
     private func loadDeliveryView() {
         deliveryView = DeliveryView()
         contentView.addSubview(deliveryView)
-        deliveryView.contraintsAlignWithSuperView()
+        deliveryView.alignWithSuperView()
     }
 }

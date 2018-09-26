@@ -70,17 +70,10 @@ class ListDeliveryVC: UIViewController {
         deliveryTableView.separatorInset.left = 0
         deliveryTableView.rowHeight = UITableView.automaticDimension
         deliveryTableView.estimatedRowHeight = UITableView.automaticDimension
-        
         view.addSubview(deliveryTableView)
-        deliveryTableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        deliveryTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        deliveryTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        deliveryTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
 
-        let bottomConstraint = deliveryTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        bottomConstraint.priority = .defaultLow
-        bottomConstraint.isActive = true
+        let superViewConstraint = deliveryTableView.alignWithSuperView()
+        superViewConstraint[.bottom]?.priority = .defaultLow
     }
     
     private func loadRefreshControlView() {
@@ -93,11 +86,13 @@ class ListDeliveryVC: UIViewController {
         loadingView = LoadingView()
         loadingView.backgroundColor = UIColor.lightGray
         view.addSubview(loadingView)
-        loadingView.translatesAutoresizingMaskIntoConstraints = false
-        loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        loadingView.topAnchor.constraint(equalTo: deliveryTableView.bottomAnchor).isActive = true
-        loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        let superViewConstraint = loadingView.alignWithSuperView(activate: false)
+        let tableViewConstraint = loadingView.align(with: deliveryTableView, activate: false)
+        [superViewConstraint[.bottom],
+         superViewConstraint[.trailing],
+         superViewConstraint[.leading],
+         tableViewConstraint[.bottom]].forEach { $0?.isActive = true }
         loadingView.hide()
     }
     
