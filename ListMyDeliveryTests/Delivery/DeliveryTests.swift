@@ -11,21 +11,13 @@ import XCTest
 
 class DeliveryTests: XCTestCase {
 
-    override func setUp() {
-
-    }
-
-    override func tearDown() {
-
-    }
-    
     // MARK: - Decoding
     
     func testJSONDecodingCase1() {
         
         let testBundle = Bundle(for: type(of: self))
         guard let fileURL = testBundle.url(forResource: "DeliveryCase1", withExtension: "json") else {
-            XCTFail("Unable to load sample JSON")
+            XCTFail("Unable to load JSON from bundle")
             return
         }
         
@@ -54,7 +46,7 @@ class DeliveryTests: XCTestCase {
         
         let testBundle = Bundle(for: type(of: self))
         guard let fileURL = testBundle.url(forResource: "DeliveryCase2", withExtension: "json") else {
-            XCTFail("Unable to load sample JSON")
+            XCTFail("Unable to load JSON from bundle")
             return
         }
         
