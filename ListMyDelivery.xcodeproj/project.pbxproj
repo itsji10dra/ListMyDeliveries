@@ -46,8 +46,6 @@
 		10B9D3A1214FAC03007DFD54 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D3A0214FAC03007DFD54 /* RealmManager.swift */; };
 		10B9D3A3214FAF20007DFD54 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D3A2214FAF20007DFD54 /* ReachabilityManager.swift */; };
 		10B9D3A5214FE4E1007DFD54 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9D3A4214FE4E1007DFD54 /* Protocols.swift */; };
-		33EE3985545B62D9B8F6CEA2 /* Pods_ListMyDelivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD929DAC488EBF74E48BCE9 /* Pods_ListMyDelivery.framework */; };
-		7D788B40E4BCD8D83D8A5F53 /* Pods_PAL_MBE_ListMyDelivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD92B26660FA8BD772EDB4C /* Pods_PAL_MBE_ListMyDelivery.framework */; };
 		958065A2C20A9BB4C08642ED /* Pods_ListMyDeliveryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B326D8945968D4F9866E9D /* Pods_ListMyDeliveryTests.framework */; };
 		D78E5A268AD73AB89BCEB4F2 /* Pods_DeliveryApp_ListMyDeliveryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18281B421370D1E441DA26EA /* Pods_DeliveryApp_ListMyDeliveryTests.framework */; };
 		F0CF3F9ACF88544EF9C55D23 /* Pods_DeliveryApp_ListMyDelivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB2D1E27208C531AA0F465F /* Pods_DeliveryApp_ListMyDelivery.framework */; };
@@ -65,7 +63,6 @@
 
 /* Begin PBXFileReference section */
 		09B326D8945968D4F9866E9D /* Pods_ListMyDeliveryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ListMyDeliveryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D83636BB5D259E13220FAAE /* Pods-ListMyDeliveryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListMyDeliveryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ListMyDeliveryTests/Pods-ListMyDeliveryTests.release.xcconfig"; sourceTree = "<group>"; };
 		0DE759BCBB86965F1AEB7BC9 /* Pods-DeliveryApp-ListMyDelivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp-ListMyDelivery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryApp-ListMyDelivery/Pods-DeliveryApp-ListMyDelivery.debug.xcconfig"; sourceTree = "<group>"; };
 		1055C798215B6955001C668B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		1055C79C215BB4EE001C668B /* DeliveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTests.swift; sourceTree = "<group>"; };
@@ -112,13 +109,8 @@
 		10B9D3A4214FE4E1007DFD54 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		125A35641F30EA5AD3D92F9D /* Pods-DeliveryApp-ListMyDeliveryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp-ListMyDeliveryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryApp-ListMyDeliveryTests/Pods-DeliveryApp-ListMyDeliveryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		18281B421370D1E441DA26EA /* Pods_DeliveryApp_ListMyDeliveryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryApp_ListMyDeliveryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B4604583C627D3197E0DFAA /* Pods-PAL_MBE-ListMyDelivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAL_MBE-ListMyDelivery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PAL_MBE-ListMyDelivery/Pods-PAL_MBE-ListMyDelivery.debug.xcconfig"; sourceTree = "<group>"; };
-		59ADB45AAD5729B50112E4F6 /* Pods-ListMyDeliveryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListMyDeliveryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ListMyDeliveryTests/Pods-ListMyDeliveryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5AA33D03417FBE17FB003D44 /* Pods-DeliveryApp-ListMyDeliveryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp-ListMyDeliveryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryApp-ListMyDeliveryTests/Pods-DeliveryApp-ListMyDeliveryTests.release.xcconfig"; sourceTree = "<group>"; };
-		5FC92E155EED16DE4A05BBB8 /* Pods-ListMyDelivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListMyDelivery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ListMyDelivery/Pods-ListMyDelivery.debug.xcconfig"; sourceTree = "<group>"; };
-		694A50654D18A69A1C1F5E5B /* Pods-PAL_MBE-ListMyDelivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAL_MBE-ListMyDelivery.release.xcconfig"; path = "Pods/Target Support Files/Pods-PAL_MBE-ListMyDelivery/Pods-PAL_MBE-ListMyDelivery.release.xcconfig"; sourceTree = "<group>"; };
 		6AD929DAC488EBF74E48BCE9 /* Pods_ListMyDelivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ListMyDelivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B49D874D48878E95B519E45 /* Pods-ListMyDelivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListMyDelivery.release.xcconfig"; path = "Pods/Target Support Files/Pods-ListMyDelivery/Pods-ListMyDelivery.release.xcconfig"; sourceTree = "<group>"; };
 		9BD92B26660FA8BD772EDB4C /* Pods_PAL_MBE_ListMyDelivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PAL_MBE_ListMyDelivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB2D1E27208C531AA0F465F /* Pods_DeliveryApp_ListMyDelivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryApp_ListMyDelivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13C3D14145E7DCE8E55316D /* Pods-DeliveryApp-ListMyDelivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp-ListMyDelivery.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryApp-ListMyDelivery/Pods-DeliveryApp-ListMyDelivery.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,8 +121,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33EE3985545B62D9B8F6CEA2 /* Pods_ListMyDelivery.framework in Frameworks */,
-				7D788B40E4BCD8D83D8A5F53 /* Pods_PAL_MBE_ListMyDelivery.framework in Frameworks */,
 				F0CF3F9ACF88544EF9C55D23 /* Pods_DeliveryApp_ListMyDelivery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,12 +327,6 @@
 		D90012EE55C7C93A066EEEDB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5FC92E155EED16DE4A05BBB8 /* Pods-ListMyDelivery.debug.xcconfig */,
-				7B49D874D48878E95B519E45 /* Pods-ListMyDelivery.release.xcconfig */,
-				59ADB45AAD5729B50112E4F6 /* Pods-ListMyDeliveryTests.debug.xcconfig */,
-				0D83636BB5D259E13220FAAE /* Pods-ListMyDeliveryTests.release.xcconfig */,
-				4B4604583C627D3197E0DFAA /* Pods-PAL_MBE-ListMyDelivery.debug.xcconfig */,
-				694A50654D18A69A1C1F5E5B /* Pods-PAL_MBE-ListMyDelivery.release.xcconfig */,
 				0DE759BCBB86965F1AEB7BC9 /* Pods-DeliveryApp-ListMyDelivery.debug.xcconfig */,
 				D13C3D14145E7DCE8E55316D /* Pods-DeliveryApp-ListMyDelivery.release.xcconfig */,
 				125A35641F30EA5AD3D92F9D /* Pods-DeliveryApp-ListMyDeliveryTests.debug.xcconfig */,
@@ -740,7 +724,10 @@
 				DEVELOPMENT_TEAM = NLP39UWW3M;
 				INFOPLIST_FILE = "$(SRCROOT)/ListMyDelivery/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.itsji10dra.ListMyDelivery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -757,7 +744,10 @@
 				DEVELOPMENT_TEAM = NLP39UWW3M;
 				INFOPLIST_FILE = "$(SRCROOT)/ListMyDelivery/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.itsji10dra.ListMyDelivery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -773,7 +763,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ListMyDeliveryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.itsji10dra.ListMyDeliveryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -790,7 +784,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ListMyDeliveryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.itsji10dra.ListMyDeliveryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
