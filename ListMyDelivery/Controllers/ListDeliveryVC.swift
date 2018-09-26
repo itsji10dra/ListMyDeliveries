@@ -19,8 +19,6 @@ class ListDeliveryVC: UIViewController {
     private var refreshControl: UIRefreshControl!
     
     internal let cellIdentifier = "DeliveryCell"
-        
-    private let loadingViewHeight: CGFloat = 50
     
     // MARK: - Data
 
