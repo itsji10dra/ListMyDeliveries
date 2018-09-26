@@ -17,7 +17,7 @@ public typealias ConstraintInfo = [ConstraintType: NSLayoutConstraint]
 extension UIView {
     
     @discardableResult
-    public func align(with view: UIView, padding inset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
+    public func alignWith(view: UIView, padding inset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
         translatesAutoresizingMaskIntoConstraints = false
         let constraint: ConstraintInfo = [.top: topAnchor.constraint(equalTo: view.topAnchor, constant: inset.top),
                                           .bottom: bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: inset.bottom),
@@ -50,7 +50,7 @@ extension UIView {
     }
     
     @discardableResult
-    public func alignCenter(with view: UIView, activate: Bool = true) -> ConstraintInfo {
+    public func alignCenterTo(view: UIView, activate: Bool = true) -> ConstraintInfo {
         translatesAutoresizingMaskIntoConstraints = false
         let constraint: ConstraintInfo = [.centerX: centerXAnchor.constraint(equalTo: view.centerXAnchor),
                                           .centerY: centerYAnchor.constraint(equalTo: view.centerYAnchor)]
@@ -59,27 +59,27 @@ extension UIView {
     }
     
     @discardableResult
-    public func alignWithSuperView(with paddingInset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
+    public func alignWithSuperView(inset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
         guard let superview = superview else { return [:] }
-        return align(with: superview, padding: paddingInset, activate: activate)
+        return alignWith(view: superview, padding: inset, activate: activate)
     }
     
     @discardableResult
-    public func alignLessThanOrEqualToWithSuperView(with paddingInset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
+    public func alignLessThanOrEqualToWithSuperView(inset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
         guard let superview = superview else { return [:] }
-        return alignLessThanOrEqualTo(superview, padding: paddingInset, activate: activate)
+        return alignLessThanOrEqualTo(superview, padding: inset, activate: activate)
     }
     
     @discardableResult
-    public func alignGreaterThanOrEqualToWithSuperView(with paddingInset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
+    public func alignGreaterThanOrEqualToWithSuperView(inset: UIEdgeInsets = .zero, activate: Bool = true) -> ConstraintInfo {
         guard let superview = superview else { return [:] }
-        return alignGreaterThanOrEqualTo(superview, padding: paddingInset, activate: activate)
+        return alignGreaterThanOrEqualTo(superview, padding: inset, activate: activate)
     }
     
     @discardableResult
     public func alignCenterWithSuperView(activate: Bool = true) -> ConstraintInfo {
         guard let superview = superview else { return [:] }
-        return alignCenter(with: superview, activate: activate)
+        return alignCenterTo(view: superview, activate: activate)
     }
     
     @discardableResult

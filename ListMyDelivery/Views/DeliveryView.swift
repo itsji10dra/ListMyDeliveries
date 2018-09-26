@@ -49,19 +49,21 @@ class DeliveryView: UIView {
     private func loadThumbImageView() {
         thumbImageView = UIImageView()
         addSubview(thumbImageView)
-        thumbImageView.translatesAutoresizingMaskIntoConstraints = false
-        thumbImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        thumbImageView.widthAnchor.constraint(equalToConstant: minimumThumbWidth).isActive = true
-        thumbImageView.heightAnchor.constraint(equalTo: thumbImageView.widthAnchor).isActive = true
-        thumbImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         
-        let topConstraint = thumbImageView.topAnchor.constraint(equalTo: topAnchor)
-        topConstraint.priority = .defaultLow
-        topConstraint.isActive = true
-
-        let bottomConstraint = thumbImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        bottomConstraint.priority = .defaultLow
-        bottomConstraint.isActive = true
+        let dimensionConstraints = thumbImageView.align(width: minimumThumbWidth, height: minimumThumbWidth)
+        let superViewConstraint = thumbImageView.alignWithSuperView(activate: false)
+        let centerConstraint = thumbImageView.alignCenterWithSuperView(activate: false)
+        
+        let width = dimensionConstraints[.width]
+        let height = dimensionConstraints[.height]
+        let center = centerConstraint[.centerY]
+        let leading = superViewConstraint[.leading]
+        let top = superViewConstraint[.top]
+        top?.priority = .defaultLow
+        let bottom = superViewConstraint[.bottom]
+        bottom?.priority = .defaultLow
+        
+        [center, width, height, leading, top, bottom].forEach { $0?.isActive = true }
     }
     
     private func loadDescriptionLabel() {

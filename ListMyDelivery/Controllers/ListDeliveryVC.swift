@@ -88,7 +88,7 @@ class ListDeliveryVC: UIViewController {
         view.addSubview(loadingView)
         
         let superViewConstraint = loadingView.alignWithSuperView(activate: false)
-        let tableViewConstraint = loadingView.align(with: deliveryTableView, activate: false)
+        let tableViewConstraint = loadingView.alignWith(view: deliveryTableView, activate: false)
         [superViewConstraint[.bottom],
          superViewConstraint[.trailing],
          superViewConstraint[.leading],
@@ -112,7 +112,7 @@ class ListDeliveryVC: UIViewController {
                     let newIndexPaths = (oldRecordsCount..<newRecordsCount).map { IndexPath(row: $0, section: 0) }
                     weakSelf.deliveryInfoArray = data
                     weakSelf.deliveryTableView.beginUpdates()
-                    weakSelf.deliveryTableView.insertRows(at: newIndexPaths, with: .middle)
+                    weakSelf.deliveryTableView.insertRows(at: newIndexPaths, with: .automatic)
                     weakSelf.deliveryTableView.endUpdates()
                     weakSelf.loadingView.hide()
                     if offset == 0 {
