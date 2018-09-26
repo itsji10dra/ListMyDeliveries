@@ -16,10 +16,6 @@ class RealmTests: XCTestCase {
         Realm.Configuration.defaultConfiguration.inMemoryIdentifier = "TestingRealm"
     }
     
-    func testGet() {
-        
-    }
-    
     func testSave() {
         let storedLocation = StoredLocation()
         storedLocation.latitude = 33.4521
@@ -82,5 +78,43 @@ class RealmTests: XCTestCase {
         XCTAssertEqual(retrievedDelivery?.location.latitude, updatedStoredLocation.latitude)
         XCTAssertEqual(retrievedDelivery?.location.longitude, updatedStoredLocation.longitude)
         XCTAssertEqual(retrievedDelivery?.location.address, updatedStoredLocation.address)
+    }
+    
+    func testDelete() {
+        
+        let storedLocation1 = StoredLocation()
+        storedLocation1.latitude = 33.4521
+        storedLocation1.longitude = 16.4521
+        storedLocation1.address = "Sample Address 1"
+        
+        let storedLocation2 = StoredLocation()
+        storedLocation2.latitude = 35.6878
+        storedLocation2.longitude = 71.982
+        storedLocation2.address = "Sample Address 2"
+        
+        let storedLocation3 = StoredLocation()
+        storedLocation3.latitude = 76.2121
+        storedLocation3.longitude = 12.2123
+        storedLocation3.address = "Sample Address 3"
+
+        let realm = try! Realm()
+        
+        let locations = realm.objects(StoredLocation.self)
+        XCTAssertEqual(locations.count, 0)
+
+        try! realm.write {
+            realm.add([storedLocation1, storedLocation2, storedLocation3])
+        }
+        XCTAssertEqual(locations.count, 3)
+        
+        try! realm.write {
+            realm.delete(storedLocation2)
+        }
+        XCTAssertEqual(locations.count, 2)
+
+        try! realm.write {
+            realm.deleteAll()
+        }
+        XCTAssertEqual(locations.count, 0)
     }
 }
