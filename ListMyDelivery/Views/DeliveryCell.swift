@@ -20,7 +20,7 @@ class DeliveryCell: UITableViewCell {
 
     // MARK: - Initializer
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         accessoryType = .disclosureIndicator
         loadDeliveryView()

@@ -39,7 +39,7 @@ class ImageCache {
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(clearMemoryCache),
-                                               name: .UIApplicationDidReceiveMemoryWarning,
+                                               name: UIApplication.didReceiveMemoryWarningNotification,
                                                object: nil)
     }
     
@@ -60,7 +60,7 @@ class ImageCache {
         
         if toDisk {
             if let path = fileManager.libraryPath()?.appendingPathComponent(key).path,
-                let data = UIImageJPEGRepresentation(image, 1.0) ?? UIImagePNGRepresentation(image),
+                let data = image.jpegData(compressionQuality: 1.0) ?? image.pngData(),
                 fileManager.fileExists(atPath: path) == false {
                 if fileManager.createFile(atPath: path, contents: data, attributes: nil) {
 //                    print("Cached To Disk: ", key)

@@ -71,7 +71,7 @@ class ActivityIndicator {
             holderStackView.centerXAnchor.constraint(equalTo: blurView.centerXAnchor, constant: 0).isActive = true
             holderStackView.centerYAnchor.constraint(equalTo: blurView.centerYAnchor, constant: 0).isActive = true
             
-            let loaderView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+            let loaderView = UIActivityIndicatorView(style: .whiteLarge)
             loaderView.startAnimating()
             loaderView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
             holderStackView.addArrangedSubview(loaderView)

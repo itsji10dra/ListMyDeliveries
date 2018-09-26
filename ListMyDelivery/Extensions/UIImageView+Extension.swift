@@ -38,7 +38,7 @@ extension UIImageView {
             return indicator
         } else {
             let indicator = UIActivityIndicatorView()
-            indicator.activityIndicatorViewStyle = .gray
+            indicator.style = .gray
             self.addSubview(indicator)
             indicator.translatesAutoresizingMaskIntoConstraints = false
             indicator.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
