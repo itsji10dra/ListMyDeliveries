@@ -142,6 +142,8 @@ class PagingViewModel<T, E> where T:Decodable, T: Storable {
         completion(dataSource, nil, offset)
         
         self.loadedAllData = (offset != 0) && data.isEmpty
+        
+        print("--------------------------------------------------------------------------------------")
     }
     
     private func persistData(_ data: [T]) {
