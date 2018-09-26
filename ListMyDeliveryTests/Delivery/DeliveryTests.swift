@@ -20,16 +20,8 @@ class DeliveryTests: XCTestCase {
             return XCTFail("Unable to load JSON from bundle")
         }
         
-        var stringJSON: String? = nil
-        do {
-            stringJSON = try String(contentsOf: fileURL)
-        } catch {
-            XCTFail("JSON loading from file failed.")
-        }
-        XCTAssertNotNil(stringJSON)
-        
-        guard let data = stringJSON?.data(using: .utf8) else { return }
-        
+        guard let data = try? Data(contentsOf: fileURL) else { return XCTFail("Data conversion failed.") }
+
         do {
             let delivery = try JSONDecoder().decode(Delivery.self, from: data)
             XCTAssertEqual(delivery.id, 3)
@@ -48,16 +40,8 @@ class DeliveryTests: XCTestCase {
             return XCTFail("Unable to load JSON from bundle")
         }
         
-        var stringJSON: String? = nil
-        do {
-            stringJSON = try String(contentsOf: fileURL)
-        } catch {
-            XCTFail("JSON loading from file failed.")
-        }
-        XCTAssertNotNil(stringJSON)
-        
-        guard let data = stringJSON?.data(using: .utf8) else { return }
-        
+        guard let data = try? Data(contentsOf: fileURL) else { return XCTFail("Data conversion failed.") }
+
         do {
             let _ = try JSONDecoder().decode(Delivery.self, from: data)
             XCTFail("Case 2. JSON Decoding succeed for class \(Delivery.self) even when `location` is missing.")
