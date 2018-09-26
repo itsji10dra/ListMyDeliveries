@@ -22,4 +22,17 @@ extension LocationTests {
         XCTAssertEqual(location.longitude, storedLocation.longitude)
         XCTAssertEqual(location.address, storedLocation.address)
     }
+    
+    func testConvertFromStorage() {
+        
+        let storedLocation = StoredLocation()
+        storedLocation.latitude = 33.4521
+        storedLocation.longitude = 16.4521
+        storedLocation.address = "Sample Address"
+        
+        let location = Location.convertFromStorage(storedLocation)
+        XCTAssertEqual(location.latitude, storedLocation.latitude)
+        XCTAssertEqual(location.longitude, storedLocation.longitude)
+        XCTAssertEqual(location.address, storedLocation.address)
+    }
 }

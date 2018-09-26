@@ -28,4 +28,26 @@ extension DeliveryTests {
         XCTAssertEqual(delivery.location.longitude, storedDelivery.location.longitude)
         XCTAssertEqual(delivery.location.address, storedDelivery.location.address)
     }
+    
+    func testConvertFromStorage() {
+    
+        let storedLocation = StoredLocation()
+        storedLocation.latitude = 33.4521
+        storedLocation.longitude = 16.4521
+        storedLocation.address = "Sample Address"
+
+        let storedDelivery = StoredDelivery()
+        storedDelivery.id = 15
+        storedDelivery.desc = "Sample Descripition"
+        storedDelivery.imageName = "image.jpeg"
+        storedDelivery.location = storedLocation
+        
+        let delivery = Delivery.convertFromStorage(storedDelivery)
+        XCTAssertEqual(delivery.id, storedDelivery.id)
+        XCTAssertEqual(delivery.description, storedDelivery.desc)
+        XCTAssertEqual(delivery.imageUrl.lastPathComponent, storedDelivery.imageName)
+        XCTAssertEqual(delivery.location.latitude, storedDelivery.location.latitude)
+        XCTAssertEqual(delivery.location.longitude, storedDelivery.location.longitude)
+        XCTAssertEqual(delivery.location.address, storedDelivery.location.address)
+    }
 }
