@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        guard UserDefaults.standard.bool(forKey: "isRunningTest") == false else { return true }
+        
         Configuration.checkConfiguration()
         _ = ReachabilityManager.shared
         
