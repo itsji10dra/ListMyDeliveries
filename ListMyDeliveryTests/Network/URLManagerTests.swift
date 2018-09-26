@@ -51,4 +51,22 @@ class URLManagerTests: XCTestCase {
         XCTAssertNotNil(limitValue)
         XCTAssertEqual(limitValue, "\(Configuration.pageLimit)")
     }
+    
+    func testGetURLForEndpointWithOffset() {
+        
+        guard let url = URLManager.getURLForEndpoint(.deliveries, offset: 3) else {
+            return XCTFail("Endpoint deliveries returning nil URL")
+        }
+        XCTAssertNotNil(url)
+
+        guard let urlComponent = URLComponents(string: url.absoluteString) else {
+            return XCTFail("Failed to generate `URLComponent` from `url`.")
+        }
+        XCTAssertEqual(urlComponent.queryItems?.count, 2)
+        
+        let offsetValue = urlComponent.queryItems?.first(where: {$0.name == "offset"})?.value
+        XCTAssertNotNil(offsetValue)
+        XCTAssertEqual(offsetValue, "3")
+
+    }
 }
