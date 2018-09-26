@@ -21,7 +21,11 @@ class DetailsDeliveryVC: UIViewController {
     
     // MARK: - UI Data
 
-    private let deliveryViewHeight: CGFloat = 80
+    private let padding: CGFloat = 8
+
+    private lazy var portraintConstraints: [NSLayoutConstraint] = []
+
+    private lazy var landscapeConstraints: [NSLayoutConstraint] = []
     
     // MARK: - Data
     
@@ -54,10 +58,18 @@ class DetailsDeliveryVC: UIViewController {
         mapView = MKMapView()
         view.addSubview(mapView)
         mapView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        mapView.heightAnchor.constraint(equalTo: mapView.widthAnchor).isActive = true
+        
+        let portraitConstraint = [mapView.topAnchor.constraint(equalTo: view.topAnchor),
+                                  mapView.widthAnchor.constraint(equalTo: view.widthAnchor),
+                                  mapView.heightAnchor.constraint(equalTo: mapView.widthAnchor),
+                                  mapView.centerXAnchor.constraint(equalTo: view.centerXAnchor)]
+        portraintConstraints.append(contentsOf: portraitConstraint)
+        
+        let landscapeConstraint = [mapView.topAnchor.constraint(equalTo: view.topAnchor),
+                                   mapView.widthAnchor.constraint(equalTo: view.heightAnchor),
+                                   mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                                   mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor)]
+        landscapeConstraints.append(contentsOf: landscapeConstraint)
     }
     
     private func loadDeliveryView() {
@@ -67,27 +79,38 @@ class DetailsDeliveryVC: UIViewController {
         deliveryView.layer.borderWidth = 1
         deliveryView.layer.masksToBounds = true
         deliveryView.translatesAutoresizingMaskIntoConstraints = false
-        deliveryView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        deliveryView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        deliveryView.topAnchor.constraint(equalTo: mapView.bottomAnchor).isActive = true
-        deliveryView.heightAnchor.constraint(equalToConstant: deliveryViewHeight).isActive = true
+        
+        let portraitConstraint = [deliveryView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                                  deliveryView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                                  deliveryView.topAnchor.constraint(equalTo: mapView.bottomAnchor)]
+        portraintConstraints.append(contentsOf: portraitConstraint)
+        
+        let landscapeConstraint = [deliveryView.leadingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: padding),
+                                   deliveryView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+                                   deliveryView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor)]
+        landscapeConstraints.append(contentsOf: landscapeConstraint)
     }
     
     private func loadMessageLabel() {
-        let padding: CGFloat = 8
         messageLabel = UILabel()
         messageLabel.numberOfLines = 0
         view.addSubview(messageLabel)
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
-        messageLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding).isActive = true
-        messageLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding).isActive = true
-        messageLabel.topAnchor.constraint(equalTo: deliveryView.bottomAnchor, constant: padding).isActive = true
+        
+        let portraitConstraint = [messageLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+                                  messageLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+                                  messageLabel.topAnchor.constraint(equalTo: deliveryView.bottomAnchor, constant: padding)]
+        portraintConstraints.append(contentsOf: portraitConstraint)
+        
+        let landscapeConstraint = [messageLabel.leadingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: padding),
+                                   messageLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                                   messageLabel.topAnchor.constraint(equalTo: deliveryView.bottomAnchor, constant: padding)]
+        landscapeConstraints.append(contentsOf: landscapeConstraint)
     }
     
     // MARK: - Data Loading
     
     private func loadMapData() {
-        
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegion(center: detailsInfo.coordinates, span: span)
         mapView.setRegion(region, animated: true)
@@ -109,5 +132,21 @@ class DetailsDeliveryVC: UIViewController {
         let isOnline = ReachabilityManager.shared.isReachable
         messageLabel.isHidden = isOnline
         messageLabel.text = "Note: Map might not load in offline mode."
+    }
+    
+    // MARK: - ViewController
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        let isPortrait = traitCollection.horizontalSizeClass == .compact && traitCollection.verticalSizeClass == .regular
+        
+        if isPortrait {
+            NSLayoutConstraint.deactivate(landscapeConstraints)
+            NSLayoutConstraint.activate(portraintConstraints)
+        } else {
+            NSLayoutConstraint.deactivate(portraintConstraints)
+            NSLayoutConstraint.activate(landscapeConstraints)
+        }
     }
 }
